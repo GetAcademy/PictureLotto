@@ -4,8 +4,6 @@ namespace PictureLotto
 {
     internal class GameConsole
     {
-
-
         public static void WriteOpenBox(int row, int col, int index, char character)
         {
             var numberWidth = index < 10 ? 1 : 2;
@@ -28,9 +26,11 @@ namespace PictureLotto
             Console.Write(txt);
         }
 
-        private static string Pad2(int n, char padChar)
+        public static int AskForInt(string question)
         {
-            return n.ToString().PadLeft(2, padChar);
+            Console.Write(question);
+            var answer = Console.ReadLine();
+            return Convert.ToInt32(answer);
         }
     }
 }

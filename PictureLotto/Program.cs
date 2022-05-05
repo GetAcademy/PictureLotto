@@ -1,5 +1,18 @@
 ﻿using PictureLotto;
 
+var game = new Game();
+while (game.IsRunning)
+{
+    game.Show();
+    var cardIndex = GameConsole.AskForInt("Hvilket kort velger du? ");
+    game.SelectCard(cardIndex);
+}
+game.Show();
+Console.WriteLine("Gratulerer, du har fullført spillet!");
+
+
+/*
+
 const string baseSymbols = "ABCDEFGHIJ";
 var symbols = new string((baseSymbols + baseSymbols)
     .ToCharArray()
@@ -21,3 +34,4 @@ for (var i = 0; i < 20; i++)
     else GameConsole.WriteOpenBox(consoleRow, consoleCol, i, c);
 }
 
+*/
